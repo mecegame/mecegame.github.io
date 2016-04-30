@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta ut>
+	<script src="lib.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!--  Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+ 
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!--  Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+ 
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="mece.css">
+</head>
+
+<body>
+		<div id="hidenTik" onclick="tak()" >
+			<p>Click to continue</p>
+		</div>
+	<div class="global">
+		<div class="topNavBar">
+			<p>mece</p>
+			
+		</div>
+
+
+
+		<div id="playerCreate" >
+			<div class="playerList">
+				<!-- <div class="oneOfPlayer" id='s1'>
+					<p>Player Name 1</p>
+					<form action="">
+						<input id='a1' value='name' type="text">
+					</form>
+				</div> -->
+			</div>
+			<button class="btn btn-danger" onclick="addNewPlayer()">Add+</button>
+			<button class="btn btn-danger" onclick="nextStep()">Submite</button>
+		</div>
+
+
+
+		<div id="gameParameter">
+			<div>
+				<p>Starting parameter</p>
+			</div>
+			<div  class="gParam">
+				<p>industry rise</p>
+				<form action=""><input value='3' id="industryInNextPeriod" type="text"></form>
+			</div>
+			<div class="gParam">
+				<p>Tax level</p>
+				<form action=""><input value='25' id="TaxLevel"  type="text"></form>
+			</div>
+			<div  class="gParam">
+				<p>Max sales</p>
+				<form action=""><input value='2000' id="supply" type="text"></form>
+			</div>
+			<div  class="gParam">
+				<p>Bank Percent</p>
+				<form action=""><input value='20' id="bankPercent" type="text"></form>
+			</div>
+			<div  class="gParam">
+				<p>Product per player</p>
+				<form action=""><input value='1000' id="productPerPlayer" type="text"></form>
+			</div>
+
+			<button  id='goButton' class="btn btn-danger col-xs-6" onclick="goButton()" style='margin-left:25%;'>go!</button>
+		</div>
+		
+
+
+
+
+
+		<div id="playPeriod">
+		<div class="playerNow">
+			<strong id="name">1</strong>
+		</div>
+		<div class="navyHead">
+			
+			<p>prediction</p>
+		</div>
+		<div class="prediction" >
+			<!-- <p>sensetive <strong id="sensetive"> ## </strong> </p> -->
+		
+			<p>industry changes
+			<strong id="industryChanges">##</strong>
+			</p>
+		</div>
+		<div class="navyHead">
+			
+			<p>company</p>
+		</div>
+		<div class="company">
+
+			<p>income: <strong id="income">##</strong></p>
+			<p>sales: <strong id="playerSales">##</strong></p>
+			<p>buffer: <strong id="productSalent">##</strong></p>
+			<!-- <p>попит</p> -->	
+			<p>industry: <strong id="industryPlayer">##</strong></p>
+			<p>balance: <strong id="bankBalance">##</strong></p>
+		<!-- 	<p>банк</p> -->
+		</div>
+
+		<div  class="navyHead">
+			<p>industry</p>
+		</div>
+		<div id="industry">
+			
+			<p>demand: <strong id="industySupply">##</strong></p>
+			<p>supply: <strong id="industryDemand">##</strong></p>
+		</div>
+			<!-- <p>industry sales</p> -->
+
+
+			<!-- <h3>company report</h3> -->
+
+
+			<div id="redHead">
+			<p>Your parameter</p>
+			</div>
+		<div id="formForNewCalc">
+			<form action="" style="width: 100%;">
+			 <div>
+				<p  style="display: inline-block;">price</p>
+				<input id="fPrice" value="1" type="text">
+			</div>
+			<div>
+				<p  style="display: inline-block;">marketing</p>
+				<input id="fMarketing" value="1" type="text">
+			</div>
+			<div>
+				<p  style="display: inline-block;">depresation</p>
+				<input id="fDepresation" value="1" type="text">
+			</div>
+			<div>
+				<p  style="display: inline-block;">quality</p>
+				<input id="fQuality" value="1" type="text">
+			</div>
+			</form>
+				
+			<button type="button" style='margin-left:25%;' onclick='tik()' class="btn btn-primary  col-xs-6" id="goButton">Ok</button>
+
+		</div>
+	</div>
+
+
+
+	</div>
+	<script src='mece.js'></script>
+</body>
+</html>
