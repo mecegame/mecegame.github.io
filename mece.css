@@ -215,3 +215,8 @@ form{
 #hidenTik p{
 	margin-top: 50%;
 }
+.navyHead, #redHead {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+
+}
