@@ -1,0 +1,216 @@
+@media(min-width:960px){
+	.global{
+		width:60%;
+		margin: 0 auto;
+	}
+}
+@media(max-width:960px){
+.global{
+	margin-right: 2%;
+	margin-left: 2%;
+}
+}
+html{
+	height: 100%;
+}
+p::selection , strong::selection{
+	background-color: rgba(255, 255, 255, 0.0)
+}
+body{
+	width: 100%;
+	height: 100%;
+	margin:0 0 0 0;
+	color: #444;
+	background-color: #fefefe;
+}
+.topNavBar{
+	margin-left: -2%;
+	background-color: #10C889;
+	width: 104%;
+	height: 40px;
+}
+.topNavBar p {
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	margin-top: 0px;
+}
+
+
+.prediction{
+	
+	width: 100%;
+	margin:0 auto;
+	background-color: #fff;
+	border: 2px solid #337ab7;
+	font-size: 20px;
+
+}
+.prediction p{
+	margin-left: 20px;
+}
+.company{
+	min-height: 100px;
+	width: 100%;
+	margin:0 auto;
+	background-color: #fff;
+}
+.company p{
+	margin-left: 20px;
+	font-size: 20px;
+}
+
+#industry{
+	width: 100%;
+	margin:0 auto;
+	background-color: #fff;
+	border: 2px solid #337ab7;
+	font-size: 20px;
+	
+}
+#industry p{
+	margin-left: 20px;
+}
+.playerNow{
+	text-align: center;
+}
+#playPeriod{
+	display: none;
+}
+.oneOfPlayer form, 
+.oneOfPlayer p{
+	display: inline-block;
+}
+.oneOfPlayer form input{
+	color: #333;
+	position: relative;
+	left: 50px;
+	right: 50px;
+	text-align: center;
+}
+
+form input{
+	text-align: center;
+}
+.oneOfPlayer p{
+	margin-left: 10px;
+}
+.oneOfPlayer{
+	min-height: 60px;
+	background-color: #24889E;
+	color: white;
+	border: 2px solid white;
+	border-radius: 5px;
+}
+.oneOfPlayer form {
+	
+	margin-left: 10%;
+	margin-top: 12px;
+	margin-bottom: 5px;
+}
+
+ button {
+	height: 30px;
+	width: 40%;
+	text-align: center;
+	margin: 0 auto;
+	margin-left: 7%;
+	border-radius:5px;
+	background-color: #0ED76D;
+	
+	border: 0px solid black;
+	margin-top: 5px;
+	color: #333;
+}
+#gameParameter{
+	width: 100%;
+	min-height: 100px;
+	background-color: #24889E;
+	display: none;
+}
+#gameParameter div p{
+	color: white;
+	margin-top:0;
+	text-align: center;
+	font-size: 20px;
+}
+.gParam{
+	padding-top: 5px;
+	border: 1px solid white;
+}
+.gParam p{
+	display: inline-block;
+	margin-right: 10%;
+	margin-left: 10px;
+}
+.gParam:nth-child(even){
+	background-color: #24889E;
+}
+.gParam form {
+	float: right;
+	margin-right: 10px;
+}
+form{
+	display: inline-block;
+}
+#goButton{
+	margin-left: 50%;
+	margin-top: 15px;
+}
+#hidenTik{
+	width: 100%;
+	height: 100%;
+	display: none;
+	overflow: hidden;
+	background-color:  #5cb85c;
+	position: absolute;
+	color:white;
+	font-size: 30px;
+	text-align: center;
+}
+.global{
+	height: 100%;
+}
+#formForNewCalc{
+	padding-top: 10px;
+	background-color: #FeFFFf;
+	font-size: 20px;
+	bodred-radius: 50%;
+	border: 2px solid #d9534f;
+}
+#formForNewCalc form div input{
+	float: right;
+	margin-right: 20px;
+}
+#formForNewCalc form div p{
+	margin-left: 20px;
+}
+#redHead{
+	height: 40px;
+	width: 100%;
+	background-color: #d9534f;
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	margin-top: 5px;
+}
+.company{
+	border: 2px solid #337ab7;
+}
+.navyHead{
+	margin-top: 5px;
+		height: 40px;
+	width: 100%;
+	background-color: #337ab7;
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	
+}
+#name{
+	font-size: 20px;
+	color: #444;
+}
+#hidenTik p{
+	margin-top: 50%;
+}
