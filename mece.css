@@ -43,7 +43,7 @@ body{
 	margin:0 auto;
 	background-color: #fff;
 	border: 2px solid #337ab7;
-	font-size: 20px;
+	font-size: 14px;
 
 }
 .prediction p{
@@ -57,7 +57,7 @@ body{
 }
 .company p{
 	margin-left: 20px;
-	font-size: 20px;
+	font-size: 14px;
 }
 
 #industry{
@@ -65,7 +65,7 @@ body{
 	margin:0 auto;
 	background-color: #fff;
 	border: 2px solid #337ab7;
-	font-size: 20px;
+	font-size: 14px;
 	
 }
 #industry p{
