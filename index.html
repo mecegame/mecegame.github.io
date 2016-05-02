@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>mece</title>
-<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>-->
+	<title></title>
+	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<script src="lib.js"></script>
+<meta ut>
+	<!-- <script src="lib.js"></script> -->
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -14,7 +14,13 @@
  
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 
+<!--  Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+ 
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="mece.css">
 </head>
 
@@ -84,7 +90,7 @@
 		</div>
 		<div class="navyHead">
 			
-			<p>prediction</p>
+			<p>Game parameter</p>
 		</div>
 		<div class="prediction" >
 			<!-- <p>sensetive <strong id="sensetive"> ## </strong> </p> -->
@@ -95,26 +101,62 @@
 		</div>
 		<div class="navyHead">
 			
-			<p>company</p>
+			<p>Income Statement</p>
 		</div>
+			<div class="company">
+			<p>Sales: <strong id="income">##</strong></p>
+			<p>COGS: <strong id="income">##</strong></p>
+			<p>Gross Margin: <strong id="income">##</strong></p>
+			<p>Depresation: <strong id="income">##</strong></p>
+			<p>R and G: <strong id="income">##</strong></p>
+			<p>Inventory Change: <strong id="income">##</strong></p>
+			<!-- <p>Interest: <strong id="income">##</strong></p> -->
+			<p>Profit before Tax: <strong id="income">##</strong></p>
+			<p>Tax: <strong id="income">##</strong></p>
+
+			<p>Net Profit: <strong id="income">##</strong></p>
+			</div>
+
+		<div class="navyHead">
+		<p>Balance Sheet</p>
+		</div>	
 		<div class="company">
-
-			<p>income: <strong id="income">##</strong></p>
-			<p>sales: <strong id="playerSales">##</strong></p>
-			<p>buffer: <strong id="productSalent">##</strong></p>
-			<!-- <p>попит</p> -->	
-			<p>industry: <strong id="industryPlayer">##</strong></p>
-			<p>balance: <strong id="bankBalance">##</strong></p>
-		<!-- 	<p>банк</p> -->
+			<p>Cash: <strong id="bankBalance">##</strong></p>
+			<p>Capital Investment: <strong id="bankBalance">##</strong></p>
+			<p>Total Assets: <strong id="bankBalance">##</strong></p>
 		</div>
 
+		<div class="navyHead">
+			
+			<p>Operation Reports</p>
+		</div>	
+		<div class="company">
+		<p>Factory Capacity: <strong id="industryPlayer">##</strong></p>
+		<p>Capital Utilization: <strong id="bankBalance">100%</strong></p>
+		<p>Production Cost/Unit: <strong id="bankBalance">18.00$</strong></p>
+		<p>Inventory: <strong id="productSalent">##</strong></p>
+		</div>
+
+		<div class="navyHead">
+			
+			<p>Operation Reports</p>
+		</div>	
+		<div class="company">
+		<p>Orders Received: <strong id="orderReceived">##</strong></p>
+		<p>Sales Made: <strong id="playerSales">##</strong></p>
+		<p>Unfilled Orders: <strong id="UO">##</strong></p>
+		<p>Price/Unit Sold: <strong id="PUS">##</strong></p>
+		<p>Total Cost/Unit Sold: <strong id="TCUS">##</strong></p>
+		<p>Margin/Unit Sold: <strong id="MUS">##</strong></p>
+		</div>
+
+ 		<!-- //factory size -->
 		<div  class="navyHead">
-			<p>industry</p>
+			<p>Industry</p>
 		</div>
 		<div id="industry">
-			
-			<p>demand: <strong id="industySupply">##</strong></p>
-			<p>supply: <strong id="industryDemand">##</strong></p>
+			<p>Total orders: <strong id="industySupply">##</strong></p>
+			<p>Total Produced: <strong id="industryDemand">##</strong></p>
 		</div>
 			<!-- <p>industry sales</p> -->
 
