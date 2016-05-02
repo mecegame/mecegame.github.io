@@ -348,6 +348,7 @@ function calcPricePoint(playerStat) {
     return Math.round(quantity * gameParameter.priceSens);
 }
 
+
 function calcMarketingPoint(playerStat, Msum, Psum) {
     'use strict'
     var marketing = playerStat.marketing;
