@@ -73,15 +73,25 @@ function goButton() {
             salesPerPeriod: 0,
             income: 0,
             maxSales:0,
-        });
+            PUS: 0,
+            TCUS: 0,
+            MUS: 0,
+            capitalInvestment: 0,
+            totalAssets: 0,
+            orderReceived: 0,
+            cogs:0,
+            grossMargin:0,
+            tax: 0,
+            profitBeforeTax:0,
+				});
 
     }
 	setFormValue();
    tak();
 
 }
-//nextStep();
-//goButton();
+nextStep();
+goButton();
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
@@ -137,16 +147,31 @@ function tak() {
 
     $('#bankBalance')[0].innerHTML = playerList[gameParameter.playerNow - 1].balance;
     $('#industryPlayer')[0].innerHTML = playerList[gameParameter.playerNow - 1].industryPower;
-    $('#playerSales')[0].innerHTML = playerList[gameParameter.playerNow - 1].salesPerPeriod;
     $('#productSalent')[0].innerHTML = playerList[gameParameter.playerNow - 1].buferProduct;
     $('#income')[0].innerHTML = playerList[gameParameter.playerNow - 1].income;
+    $('#depresation')[0].innerHTML = playerList[gameParameter.playerNow - 1].deprecation;
 
     /////
-    $('#PUS')[0].innerHTML = playerList[gameParameter.playerNow - 1].price;
-     $('#TCUS')[0].innerHTML = playerList[gameParameter.playerNow - 1].TCUS;
-      $('#MUS')[0].innerHTML = playerList[gameParameter.playerNow - 1].MUS;
+    $('#PUS')[0].innerHTML =Math.round(playerList[gameParameter.playerNow - 1].price*100)/100;
+     $('#TCUS')[0].innerHTML =Math.round(playerList[gameParameter.playerNow - 1].TCUS*100)/100;
+      $('#MUS')[0].innerHTML =Math.round(playerList[gameParameter.playerNow - 1].MUS*100)/100;
      $('#orderReceived')[0].innerHTML = playerList[gameParameter.playerNow - 1].orderReceived;
-    /////
+    $('#playerSales')[0].innerHTML = playerList[gameParameter.playerNow - 1].salesPerPeriod;
+  	if ($('#orderReceived')[0].innerHTML<=$('#playerSales')[0].innerHTML) {
+   $('#UO')[0].innerHTML = 0;
+   }else{
+   	$('#UO')[0].innerHTML = Math.round($('#orderReceived')[0].innerHTML-$('#playerSales')[0].innerHTML);
+   }
+   $('#CI')[0].innerHTML =Math.round(playerList[gameParameter.playerNow - 1].capitalInvestment*100)/100;
+     $('#TA')[0].innerHTML =playerList[gameParameter.playerNow - 1].totalAssets ;
+    $('#sales')[0].innerHTML =playerList[gameParameter.playerNow - 1].salesPerPeriod *  playerList[gameParameter.playerNow - 1].price;
+     $('#quality')[0].innerHTML =playerList[gameParameter.playerNow - 1].quality ;
+     $('#marketing')[0].innerHTML =playerList[gameParameter.playerNow - 1].marketing;
+     $('#PBT')[0].innerHTML =playerList[gameParameter.playerNow - 1].profitBeforeTax;
+     $('#tax')[0].innerHTML =playerList[gameParameter.playerNow - 1].tax;
+
+   /////}
+
     $('#industySupply')[0].innerHTML = gameParameter.industrySupply;
 
     function calcDemand() {
@@ -259,9 +284,10 @@ function startCalcResult() {
         	var destoyedIndustry = Math.floor(deltaDepresation/40);
 
         	playerList[i].industryPower = playerList[i].industryPower + destoyedIndustry;
-        console.log('tttt');
-    }
-
+        	playerList[i].capitalInvestment = playerList[i].industryPower*40;
+        	playerList[i].totalAssets = playerList[i].capitalInvestment + playerList[i].balance;
+    
+}
     }
     calcInvesting();
     function calcIncome(){
@@ -279,7 +305,9 @@ function startCalcResult() {
 		playerList[i].MUS = playerList[i].price - playerList[i].TCUS;
 		 
     	var profitBeforeTax = tempSales - allWaste;
-    	var netProfit = profitBeforeTax;
+    	playerList[i].profitBeforeTax=profitBeforeTax;
+    	playerList[i].tax = profitBeforeTax * gameParameter.tax /100;
+    	var netProfit = profitBeforeTax *(1- gameParameter.tax);
     	playerList[i].income = netProfit;
     	}
 
@@ -298,10 +326,10 @@ function startCalcResult() {
 
 
 
- //tik();
- //tak();
- //tik();
-// tak();
+ // tik();
+ // tak();
+ // tik();
+ // tak();
 // tik();
 // tak();
 var tempQuatity =0;
