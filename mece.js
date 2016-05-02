@@ -80,8 +80,8 @@ function goButton() {
    tak();
 
 }
-//nextStep();
-//goButton();
+nextStep();
+goButton();
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
@@ -97,7 +97,7 @@ function unHideglobal() {
 }
 
 function tik() {
-console.log(gameParameter.playerNow);
+
     hideglobal();
     playerList[gameParameter.playerNow - 1].price = $('#fPrice')[0].value;
     playerList[gameParameter.playerNow - 1].marketing = $('#fMarketing')[0].value;
@@ -124,8 +124,29 @@ function setFormValue(){
 function tak() {
     unHideglobal();
     $('#name')[0].innerHTML = playerList[gameParameter.playerNow - 1].name;
+    ////prediction
     $('#industryChanges')[0].innerHTML = gameParameter.industryChanges + ' %';
+    
+    if ($('#priceSens').length === 0) {
+    $('.prediction').append('<p id="priceSens">'+'price sens : '+ gameParameter.priceSens +'</p>');
+    $('.prediction').append('<p id="marketingSens">'+'marketing sens : '+ gameParameter.marketingSens +'</p>');
+    $('.prediction').append('<p id="qualitySens">'+'quality sens : '+ gameParameter.qualitySens +'</p>');
+    $('.prediction').append('<p id="Tax">'+'tax  : '+ gameParameter.tax +'</p>');
+    }
+    ////// company
 
+    $('#bankBalance')[0].innerHTML = playerList[gameParameter.playerNow - 1].balance;
+    $('#industryPlayer')[0].innerHTML = playerList[gameParameter.playerNow - 1].industryPower;
+    $('#playerSales')[0].innerHTML = playerList[gameParameter.playerNow - 1].salesPerPeriod;
+    $('#productSalent')[0].innerHTML = playerList[gameParameter.playerNow - 1].buferProduct;
+    $('#income')[0].innerHTML = playerList[gameParameter.playerNow - 1].income;
+
+    /////
+    $('#PUS')[0].innerHTML = playerList[gameParameter.playerNow - 1].price;
+     $('#TCUS')[0].innerHTML = playerList[gameParameter.playerNow - 1].TCUS;
+      $('#MUS')[0].innerHTML = playerList[gameParameter.playerNow - 1].MUS;
+     $('#orderReceived')[0].innerHTML = playerList[gameParameter.playerNow - 1].orderReceived;
+    /////
     $('#industySupply')[0].innerHTML = gameParameter.industrySupply;
 
     function calcDemand() {
@@ -135,12 +156,9 @@ function tak() {
         }
         return tempSum;
     }
+
     $('#industryDemand')[0].innerHTML = calcDemand();
-    $('#bankBalance')[0].innerHTML = playerList[gameParameter.playerNow - 1].balance;
-    $('#industryPlayer')[0].innerHTML = playerList[gameParameter.playerNow - 1].industryPower;
-    $('#playerSales')[0].innerHTML = playerList[gameParameter.playerNow - 1].salesPerPeriod;
-    $('#productSalent')[0].innerHTML = playerList[gameParameter.playerNow - 1].buferProduct;
-    $('#income')[0].innerHTML = playerList[gameParameter.playerNow - 1].income;
+	
 	setFormValue();
 
 }
@@ -154,12 +172,14 @@ function startCalcResult() {
     var marketingSum = 0;
     var qualitySum = 0;
     for (var a = 0; a < playerList.length; a++) {
-        marketingSum = marketingSum + playerList[a].marketing;
+        marketingSum = marketingSum + +playerList[a].marketing;
   		playerList[a].salesPerPeriod = 0;
   		playerList[a].pointsPerPeriod = 0;
     }
     for (var b = 0; b < playerList.length; b++) {
-        qualitySum = qualitySum + playerList[b].quality;
+        qualitySum = qualitySum + +playerList[b].quality;
+
+        //////////////////////////////////////
     }
 
 
@@ -169,6 +189,7 @@ function startCalcResult() {
             var pricePoint = calcPricePoint(playerList[i]);
             priceSum = priceSum + pricePoint;
             playerList[i].pointsPerPeriod = playerList[i].pointsPerPeriod + pricePoint;
+        	
         	playerList[i].maxSales = tempQuatity; 
         }
     }
@@ -176,7 +197,9 @@ function startCalcResult() {
         if (playerList[i].pointsPerPeriod == 0) {
             continue;
         }
+        console.log(marketingSum);
         var marketingPoint = calcMarketingPoint(playerList[i], marketingSum, priceSum);
+        
         playerList[i].pointsPerPeriod = playerList[i].pointsPerPeriod + marketingPoint;
     }
     for (var i = 0; i < playerList.length; i++) {
@@ -199,6 +222,10 @@ function startCalcResult() {
         for (var i = 0; i < playerList.length; i++) {
             var percentOfIndustry = (playerList[i].pointsPerPeriod / calcAllPoint).toFixed(3);
             playerList[i].salesPerPeriod = Math.round(gameParameter.industrySupply * percentOfIndustry);
+           playerList[i].orderReceived =(gameParameter.industrySupply * percentOfIndustry);
+            if (playerList[i].salesPerPeriod > (playerList[i].industryPower + playerList[i].buferProduct)) {
+            	playerList[i].salesPerPeriod = (playerList[i].industryPower + playerList[i].buferProduct);
+            }
             if((gameParameter.industrySupply * percentOfIndustry)>playerList[i].maxSales){
             	playerList[i].salesPerPeriod = playerList[i].maxSales;
             }
@@ -222,16 +249,37 @@ function startCalcResult() {
     }
     calcBuffer();
 
+    function calcInvesting(){
+    	for (var i = 0; i < playerList.length; i++) {
+    	
+        	var tempDepresation = playerList[i].deprecation;
+        	var deprecationNeed = playerList[i].industryPower*2;
+        	
+        	var deltaDepresation = tempDepresation - deprecationNeed;
+        	var destoyedIndustry = Math.floor(deltaDepresation/40);
+
+        	playerList[i].industryPower = playerList[i].industryPower + destoyedIndustry;
+        console.log('tttt');
+    }
+
+    }
+    calcInvesting();
     function calcIncome(){
     	for (var i = 0; i < playerList.length; i++) {
     	var tempSales = +playerList[i].salesPerPeriod * playerList[i].price;
+    	playerList[i].sales = tempSales;
     	var tempWaste = +playerList[i].industryPower * 18;
+    	playerList[i].cogs = tempWaste;
     	var tempBufferCost = +playerList[i].buferProduct* 2;
-    	var tempWasteMarketingAndOther = (+playerList[i].marketing) +(+playerList[i].quality) + (+playerList[i].deprecation);
-		var allWaste = +tempWaste +tempBufferCost+tempWasteMarketingAndOther;
-    	var profitBeforeTax = tempSales - tempWaste;
+    	var tempWasteMarketingAndOther = +(+playerList[i].marketing) +(+playerList[i].quality);
+    	var tempWasteForDepresation =(+playerList[i].deprecation);
+		var allWaste = +tempWaste +tempBufferCost+tempWasteMarketingAndOther + tempWasteForDepresation;
+		playerList[i].TCUS = Math.round((+tempWaste + +tempWasteMarketingAndOther)/playerList[i].salesPerPeriod*100)/100;
+
+		playerList[i].MUS = playerList[i].price - playerList[i].TCUS;
+		 
+    	var profitBeforeTax = tempSales - allWaste;
     	var netProfit = profitBeforeTax;
-    	console.log( netProfit);
     	playerList[i].income = netProfit;
     	}
 
@@ -240,18 +288,20 @@ function startCalcResult() {
     function calcBalance(){
     	for (var i = 0; i < playerList.length; i++) {
     		playerList[i].balance = playerList[i].balance + playerList[i].income;
+        }
     	}
-    }
+    
     calcBalance();
 
 }
 
 
 
-// tik();
-// tak();
-// tik();
-// tak();
+
+ tik();
+ tak();
+ tik();
+ tak();
 // tik();
 // tak();
 var tempQuatity =0;
@@ -273,9 +323,8 @@ function calcMarketingPoint(playerStat, Msum, Psum) {
     var marketing = playerStat.marketing;
     var percentOfIndustry = marketing / Msum;
     Psum = Psum * (100 / gameParameter.priceSens);
-
     var allPointsOfMarkiting = Psum * gameParameter.marketingSens / 100;
-    // console.log(allPointsOfMarkiting);
+     console.log(allPointsOfMarkiting);
     var marketingPoint = allPointsOfMarkiting * percentOfIndustry;
     return Math.round(marketingPoint);
 }
