@@ -298,10 +298,10 @@ function startCalcResult() {
 
 
 
- tik();
- tak();
- tik();
- tak();
+ //tik();
+ //tak();
+ //tik();
+// tak();
 // tik();
 // tak();
 var tempQuatity =0;
