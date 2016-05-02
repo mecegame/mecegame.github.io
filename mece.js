@@ -90,8 +90,8 @@ function goButton() {
    tak();
 
 }
-//nextStep();
-//goButton();
+nextStep();
+goButton();
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
@@ -284,8 +284,6 @@ function startCalcResult() {
         	var destoyedIndustry = Math.floor(deltaDepresation/40);
 
         	playerList[i].industryPower = playerList[i].industryPower + destoyedIndustry;
-        	playerList[i].capitalInvestment = playerList[i].industryPower*40;
-        	playerList[i].totalAssets = playerList[i].capitalInvestment + playerList[i].balance;
     
 }
     }
@@ -299,15 +297,17 @@ function startCalcResult() {
     	var tempBufferCost = +playerList[i].buferProduct* 2;
     	var tempWasteMarketingAndOther = +(+playerList[i].marketing) +(+playerList[i].quality);
     	var tempWasteForDepresation =(+playerList[i].deprecation);
-		var allWaste = +tempWaste +tempBufferCost+tempWasteMarketingAndOther + tempWasteForDepresation;
+		var allWaste = +tempWaste +tempBufferCost + +tempWasteMarketingAndOther + +tempWasteForDepresation;
 		playerList[i].TCUS = Math.round((+tempWaste + +tempWasteMarketingAndOther)/playerList[i].salesPerPeriod*100)/100;
 
 		playerList[i].MUS = playerList[i].price - playerList[i].TCUS;
 		 
-    	var profitBeforeTax = tempSales - allWaste;
+    	var profitBeforeTax = +tempSales - +allWaste;
+    	console.log(profitBeforeTax);
     	playerList[i].profitBeforeTax=profitBeforeTax;
     	playerList[i].tax = profitBeforeTax * gameParameter.tax /100;
-    	var netProfit = profitBeforeTax *(1- gameParameter.tax);
+    	var netProfit = profitBeforeTax *(100- gameParameter.tax)/100;
+    	console.log(netProfit);
     	playerList[i].income = netProfit;
     	}
 
@@ -316,6 +316,8 @@ function startCalcResult() {
     function calcBalance(){
     	for (var i = 0; i < playerList.length; i++) {
     		playerList[i].balance = playerList[i].balance + playerList[i].income;
+        	playerList[i].capitalInvestment = playerList[i].industryPower*40;
+        	playerList[i].totalAssets = playerList[i].capitalInvestment + playerList[i].balance;
         }
     	}
     
