@@ -90,8 +90,8 @@ function goButton() {
    tak();
 
 }
-nextStep();
-goButton();
+//nextStep();
+//goButton();
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
@@ -272,6 +272,7 @@ function startCalcResult() {
 
     	}
     }
+
     calcBuffer();
 
     function calcInvesting(){
