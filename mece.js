@@ -177,9 +177,9 @@ function tak() {
         //sum price
         var priceSum = 0;
         for (var i = 0; i < playerList.length; i++) {
-            priceSum = priceSum + playerList[i].price;
+            priceSum = priceSum+playerList[i].price;
         }
-        gameParameter.avgPrice = priceSum/playerList.length;
+        gameParameter.avgPrice = Math.round(priceSum/playerList.length);
         var marketingSum = 0;
         for (var i = 0; i < playerList.length; i++) {
             marketingSum = marketingSum + playerList[i].marketing;
