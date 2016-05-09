@@ -13,6 +13,9 @@ var gameParameter = {
     , stepOfPlayer: 0
     , industrySupply: 2000
     , playerNow: 1
+    , totalMarketing: 0
+    , TQI: 0
+    , avgPrice: 0
 , }
 
 var playerList = [
@@ -170,6 +173,29 @@ function tak() {
     $('#marketing')[0].innerHTML = playerList[gameParameter.playerNow - 1].marketing;
     $('#PBT')[0].innerHTML = playerList[gameParameter.playerNow - 1].profitBeforeTax;
     $('#tax')[0].innerHTML = playerList[gameParameter.playerNow - 1].tax;
+    function calcIndustry(){
+        //sum price
+        var priceSum = 0;
+        for (var i = 0; i < playerList.length; i++) {
+            priceSum = priceSum + playerList[i].price;
+        }
+        gameParameter.avgPrice = priceSum/playerList.length;
+        var marketingSum = 0;
+        for (var i = 0; i < playerList.length; i++) {
+            marketingSum = marketingSum + playerList[i].marketing;
+        }
+        gameParameter.totalMarketing = marketingSum;
+        var qualitySum = 0;
+        for (var i = 0; i < playerList.length; i++) {
+            qualitySum = qualitySum + playerList[i].quality;
+        }
+        gameParameter.TQI = qualitySum;
+    }   
+
+    calcIndustry();
+    $('#avgPrice')[0].innerHTML = gameParameter.avgPrice;
+    $('#totalMarketing')[0].innerHTML = gameParameter.totalMarketing;
+    $('#TQI')[0].innerHTML = gameParameter.TQI; 
 
     /////}
 
