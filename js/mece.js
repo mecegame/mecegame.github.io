@@ -7,12 +7,12 @@ function flashingHidden(fromDiv, toDiv){
 }
 
 function hideglobal() {
-    $('.global')[0].style.display = 'none';
+    $('#global')[0].style.display = 'none';
     $('#hidenTik')[0].style.display = 'block';
 }
 
 function unHideglobal() {
-    $('.global')[0].style.display = 'block';
+    $('#global')[0].style.display = 'block';
     $('#hidenTik')[0].style.display = 'none';
 }
 
