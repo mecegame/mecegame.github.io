@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title></title>
-	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+	 
+	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta ut>
 	<!-- <script src="lib.js"></script> -->
@@ -21,21 +22,62 @@
  
 <!-- Latest compiled and minified JavaScript -->
 <!-- <script src="js/bootstrap.min.js"></script> -->
-<link rel="stylesheet" href="mece.css">
+<link rel="stylesheet" href="css/mece.css">
+<link rel="stylesheet" href="css/animate.css">
 </head>
 
 <body>
 		<div id="hidenTik" onclick="tak()" >
 			<p>Click to continue</p>
 		</div>
-	<div class="global">
+		<div id="loadingScreen" onclick="flashingHidden('loadingScreen','menuScreen');">
+			<img class="animated ifinite bounceInDown" src="src/img/logo.png" alt="logo">
+			<p>Tap to continue</p>
+		</div>
+	
+	<div id="menuScreen">
+		<!-- img dubai  -->
+			<div class="container">
+		<div id="menuTop">
+				<img src="src/img/MenuImg.jpg" class='img-responsive center-block' alt="dubai">
+				<h2>Economics Tycoon</h2>
+		</div>
+			</div>
+
+		<div class="container-fluid">
+		
+			
+		<div  id="bodyMenu">
+		
+			<div class="row">
+				
+			
+				
+			<button type='button' class="btn btn-success col-md-6 col-lg-5 col-xs-12" >Singeplyer</button>
+			
+			
+			
+			<button type='button' class="btn btn-success col-md-6 col-lg-5 col-xs-12 " onclick="flashingHidden('menuScreen','global')">Multiplayer</button>
+			
+			
+			<button type='button' class="btn btn-success col-md-6 col-lg-5 col-xs-12  ">HELP</button>
+			
+			
+				
+			<button type='button' class="btn btn-success col-md-6 col-lg-5 col-xs-12   ">Setting</button>
+			
+			</div>
+		</div>
+		</div>
+		
+	</div>
+	<div id="global">
 		<div class="topNavBar">
 			<p>mece</p>
 			
 		</div>
 
-
-
+		
 		<div id="playerCreate" >
 			<div class="playerList">
 				<!-- <div class="oneOfPlayer" id='s1'>
@@ -85,6 +127,26 @@
 
 
 		<div id="playPeriod">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://getbootstrap.com/examples/starter-template/#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://getbootstrap.com/examples/starter-template/#">Home</a></li>
+            <li><a href="http://getbootstrap.com/examples/starter-template/#about">About</a></li>
+            <li><a href="http://getbootstrap.com/examples/starter-template/#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 		<div class="playerNow">
 			<strong id="name">1</strong>
 		</div>
@@ -198,6 +260,10 @@
 
 
 	</div>
-	<script src='mece.js'></script>
+	<script src="js/dataBase.js"></script>
+	<script src="js/playerCreate.js"></script>
+	<script src="js/calculatingPart.js"></script>
+	<script src='js/mece.js'></script>
+	<script src="js/testingScript.js"></script>
 </body>
 </html>
