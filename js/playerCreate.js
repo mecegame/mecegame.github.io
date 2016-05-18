@@ -19,6 +19,7 @@ function goButton() {
     gameParameter.tax = +$('#TaxLevel')[0].value;
     gameParameter.industrySupply = +$('#supply')[0].value;
     gameParameter.bankPercent = +$('#bankPercent')[0].value;
+    gameParameter.creditLine = +$('#creditLine')[0].value;
     var tempIndustryPower = +$('#productPerPlayer')[0].value;
     for (var i = 1; i <= playerOnScreen; i++) {
         playerList.push({
@@ -44,6 +45,9 @@ function goButton() {
             , grossMargin: 0
             , tax: 0
             , profitBeforeTax: 0
+            , credit: 0
+            , pricePerProduct: 18
+            , lose: 0
         , });
 
     }
