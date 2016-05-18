@@ -45,6 +45,7 @@ function startCalcResult() {
 
 
     function salesTime() {
+        gameParameter.dayNow++;
         var calcAllPoint = 0;
         for (var i = 0; i < playerList.length; i++) {
             calcAllPoint = calcAllPoint + playerList[i].pointsPerPeriod;
@@ -100,7 +101,7 @@ function startCalcResult() {
         for (var i = 0; i < playerList.length; i++) {
             var tempSales = +playerList[i].salesPerPeriod * playerList[i].price;
             playerList[i].sales = tempSales;
-            var tempWaste = +playerList[i].industryPower * 18;
+            var tempWaste = +playerList[i].industryPower * playerList[i].pricePerProduct;
             playerList[i].cogs = tempWaste;
             var tempBufferCost = +playerList[i].buferProduct * 2;
             var tempWasteMarketingAndOther = +(+playerList[i].marketing) + (+playerList[i].quality);
@@ -131,6 +132,19 @@ function startCalcResult() {
     function calcBalance() {
         for (var i = 0; i < playerList.length; i++) {
             playerList[i].balance = playerList[i].balance + playerList[i].income;
+            if (playerList[i].balance<0) {
+                var tempCredit = playerList[i].balance*(-1);
+                tempCredit = tempCredit *(1+(gameParameter.bankPercent/100));
+                playerList[i].credit = tempCredit;
+                playerList[i].balance = playerList[i].balance*(1+(gameParameter.bankPercent/100));
+            }else{
+                playerList[i].credit = 0;
+            }
+
+            if (playerList[i].balance< (-1)*gameParameter.creditLine && gameParameter.dayNow >0 && playerList[i].lose == false ) {
+                playerList[i].lose = 1;
+                playerList[i].name = playerList[i].name + ' lose';
+            }
             playerList[i].capitalInvestment = playerList[i].industryPower * 40;
             playerList[i].totalAssets = playerList[i].capitalInvestment + playerList[i].balance;
         }
