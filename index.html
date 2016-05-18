@@ -24,6 +24,11 @@
 <!-- <script src="js/bootstrap.min.js"></script> -->
 <link rel="stylesheet" href="css/mece.css">
 <link rel="stylesheet" href="css/animate.css">
+ <script type="text/javascript">
+    $(document).ready( function() {
+      $('#tab-container').easytabs();
+    });
+  </script>
 </head>
 
 <body>
@@ -117,6 +122,10 @@
 				<p>Product per player</p>
 				<form action=""><input value='1000' id="productPerPlayer" type="text"></form>
 			</div>
+			<div  class="gParam">
+				<p>Credit Line</p>
+				<form action=""><input value='50000' id="creditLine" type="text"></form>
+			</div>
 
 			<button  id='goButton' class="btn btn-danger col-xs-6" onclick="goButton()" style='margin-left:25%;'>go!</button>
 		</div>
@@ -127,40 +136,45 @@
 
 
 		<div id="playPeriod">
-		<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
-  <!--    <div class="container">-->
-  <!--      <div class="navbar-header">-->
-  <!--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">-->
-  <!--          <span class="sr-only">Toggle navigation</span>-->
-  <!--          <span class="icon-bar"></span>-->
-  <!--          <span class="icon-bar"></span>-->
-  <!--          <span class="icon-bar"></span>-->
-  <!--        </button>-->
-  <!--        <a class="navbar-brand" href="http://getbootstrap.com/examples/starter-template/#">Project name</a>-->
-  <!--      </div>-->
-  <!--      <div id="navbar" class="collapse navbar-collapse">-->
-  <!--        <ul class="nav navbar-nav">-->
-  <!--          <li class="active"><a href="http://getbootstrap.com/examples/starter-template/#">Home</a></li>-->
-  <!--          <li><a href="http://getbootstrap.com/examples/starter-template/#about">About</a></li>-->
-  <!--          <li><a href="http://getbootstrap.com/examples/starter-template/#contact">Contact</a></li>-->
-  <!--        </ul>-->
-  <!--      </div><!--/.nav-collapse -->
-  <!--    </div>-->
-  <!--  </nav>-->
 		<div class="playerNow">
 			<strong id="name">1</strong>
 		</div>
+	   	<div id="tab-container" class="tab-container">
+  <ul class='etabs'>
+    <li class='tab'><a href="#tabs1">Factory</a></li>
+    <li class='tab'><a href="#tabs2">Industry</a></li>
+    <li class='tab'><a href="#tabs3">Balance</a></li>
+    <li class='tab'><a href="#tabs4">Bank</a></li>
+    <!-- <li class='tab'><a href="#tabs5">Stock Exchange</a></li>
+    <li class='tab'><a href="#tabs6">Updates</a></li> -->
+    <li class='tab'><a href="#tabs7">Your parameter</a></li>
+  </ul>
+  <div id="tabs1">
 		<div class="navyHead">
 			
-			<p>Game parameter</p>
+			<p>Operation Reports</p>
+		</div>	
+		<div class="company">
+		<p>Factory Capacity: <strong id="industryPlayer">##</strong></p>
+		<p>Capital Utilization: <strong id="bankBalances">100%</strong></p>
+		<p>Production Cost/Unit: <strong id="PPU">##</strong></p>
+		<p>Inventory: <strong id="productSalent">##</strong></p>
 		</div>
-		<div class="prediction" >
-			<!-- <p>sensetive <strong id="sensetive"> ## </strong> </p> -->
+
+		<div class="navyHead">
+			
+			<p>Operation Reports</p>
+		</div>	
+		<div class="company">
+		<p>Orders Received: <strong id="orderReceived">##</strong></p>
+		<p>Sales Made: <strong id="playerSales">##</strong></p>
+		<p>Unfilled Orders: <strong id="UO">##</strong></p>
+		<p>Price/Unit Sold: <strong id="PUS">##</strong></p>
+		<p>Total Cost/Unit Sold: <strong id="TCUS">##</strong></p>
+		<p>Margin/Unit Sold: <strong id="MUS">##</strong></p>
+		</div>
+    
 		
-			<p>industry changes
-			<strong id="industryChanges">##</strong>
-			</p>
-		</div>
 		<div class="navyHead">
 			
 			<p>Income Statement</p>
@@ -178,64 +192,59 @@
 
 			<p>Net Profit: <strong id="income">##</strong></p>
 			</div>
+			</div>
+ 
 
-		<div class="navyHead">
-		<p>Balance Sheet</p>
-		</div>	
-		<div class="company">
-			<p>Cash: <strong id="bankBalance">##</strong></p>
-			<p>Capital Investment: <strong id="CI">##</strong></p>
-			<p>Total Assets: <strong id="TA">##</strong></p>
-		</div>
-
-		<div class="navyHead">
-			
-			<p>Operation Reports</p>
-		</div>	
-		<div class="company">
-		<p>Factory Capacity: <strong id="industryPlayer">##</strong></p>
-		<p>Capital Utilization: <strong id="bankBalances">100%</strong></p>
-		<p>Production Cost/Unit: <strong id="bankBalancea">18.00$</strong></p>
-		<p>Inventory: <strong id="productSalent">##</strong></p>
-		</div>
-
-		<div class="navyHead">
-			
-			<p>Operation Reports</p>
-		</div>	
-		<div class="company">
-		<p>Orders Received: <strong id="orderReceived">##</strong></p>
-		<p>Sales Made: <strong id="playerSales">##</strong></p>
-		<p>Unfilled Orders: <strong id="UO">##</strong></p>
-		<p>Price/Unit Sold: <strong id="PUS">##</strong></p>
-		<p>Total Cost/Unit Sold: <strong id="TCUS">##</strong></p>
-		<p>Margin/Unit Sold: <strong id="MUS">##</strong></p>
-		</div>
-
- 		<!-- //factory size -->
+  <div id="tabs2">
+    
 		<div  class="navyHead">
 			<p>Industry</p>
 		</div>
 		<div id="industry">
+			<p>industry changes
+			<strong id="industryChanges">##</strong>
+			</p>
 			<p>Total orders: <strong id="industySupply">##</strong></p>
 			<p>Total Produced: <strong id="industryDemand">##</strong></p>
 			<p>Avg price: <strong id="avgPrice">##</strong></p>
 			<p>Total marketing: <strong id="totalMarketing">##</strong></p>
 			<p>Total quality investment: <strong id="TQI">##</strong></p>
 		</div>
-			<!-- <p>industry sales</p> -->
-
-
-			<!-- <h3>company report</h3> -->
-
-
+  </div>
+  <div id="tabs3">
+   
+		<div class="navyHead">
+		<p>Balance Sheet</p>
+		</div>	
+		<div class="companyCash">
+			<p>Cash: <strong id="bankBalance">##</strong></p>
+			<p>Capital Investment: <strong id="CI">##</strong></p>
+			<p>Total Assets: <strong id="TA">##</strong></p>
+		</div>
+  </div>
+  <div id="tabs4">
+    <div class="navyHead">
+    	<p>Bank</p>
+    </div>
+   <div id="bankSector">
+   	<p>credit: <strong id="credit">#</strong></p>
+   	<p>Bank percent: <strong id="bankPercentG">#</strong></p>
+   </div>
+  </div>
+  <div id="tabs5">
+    
+  </div>
+  <div id="tabs6">
+    
+  </div>
+  <div id="tabs7">
 			<div id="redHead">
 			<p>Your parameter</p>
 			</div>
 		<div id="formForNewCalc">
-			<form action="" style="width: 100%;">
+			<form action="" style="width: 100%;"  autocomplete='off'>
 			 <div>
-				<p  style="display: inline-block;">price</p>
+				<p  style="display: inline-block;" autocomplete='off'>price</p>
 				<input id="fPrice" value="1" type="text">
 			</div>
 			<div>
@@ -255,6 +264,26 @@
 			<button type="button" style='margin-left:25%;' onclick='tik()' class="btn btn-primary  col-xs-6" id="goButton">Ok</button>
 
 		</div>
+    
+  </div>
+</div>
+		<div class="navyHead"  style="display:none;">
+			
+			<p>Game parameter</p>
+		</div>
+		<div class="prediction" style="display:none;" >
+			<!-- <p>sensetive <strong id="sensetive"> ## </strong> </p> -->
+		
+
+
+
+ 		<!-- //factory size -->
+			<!-- <p>industry sales</p> -->
+
+
+			<!-- <h3>company report</h3> -->
+
+
 	</div>
 
 
@@ -264,6 +293,9 @@
 	<script src="js/playerCreate.js"></script>
 	<script src="js/calculatingPart.js"></script>
 	<script src='js/mece.js'></script>
-	<script src="js/testingScript.js"></script>
+	<script src="js/testing.js"></script>
+	
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.easytabs/3.2.0/jquery.easytabs.min.js"></script>
+
 </body>
 </html>
