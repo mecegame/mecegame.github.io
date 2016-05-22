@@ -1,0 +1,75 @@
+    body{
+      background: #ccc;
+    }
+    header{
+      width: 100%;
+      height: 50px;
+      background-color: rgb(56, 138, 99);
+
+    }
+    #buttonActivateSlider{
+      font-size: 20px;
+    }
+    .buttonBox{
+      display: inline-block;
+      position: absolute;
+      top: 3px;
+      left: 0px;
+
+    }
+    #dailyMenuBox{
+     
+      width: 100%;
+      background-color: #eee;
+      float: right;
+    }
+    #st-trigger-effects{
+
+    }
+    .dailyBox{
+      width: 99%;
+      min-height: 50px;
+      background-color: white;
+      margin: 2px 0px 5px 0px;
+      margin-left: .5%;
+    }
+    .headingBox{
+      height: 35px;
+      background-color: rgb(56, 138, 99);
+      color: white;
+      text-align: center;
+/*      border-bottom: 1px solid #d50000;*/
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+    .bottomBox .container .row .col-lg-6 .input-group span button{
+      height: 33px;
+    margin-top: 3px;
+      clear: both;
+      
+      color: white;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .bottomBox .container .row .col-lg-6 .input-group span button p{
+      margin-top: -12px;
+     
+      margin-bottom: 0;
+      
+    }
+    .bottomBox .container .row .col-lg-6 .input-group  input{
+      margin-top: 5px;
+     
+    }
+    .bodyBox{
+     
+     
+      border-bottom: 1px solid #bbb;
+    }
+.hBox{
+  text-align: center;
+}

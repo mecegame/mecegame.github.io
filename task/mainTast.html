@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Main Task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="js/modernizr.custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- Bootstrap -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="st-container" class="st-container">
+        <!-- content push wrapper -->
+        <div class="st-pusher">
+            <nav class="st-menu st-effect-1" id="menu-1">
+                <h2 class="icon icon-study">Main Task</h2>
+                <ul>
+                    <li><a class="icon icon-clock" href="#">this day</a></li>
+                    <li><a class="icon icon-calendar" href="#">statistic</a></li>
+                    <li><a class="icon icon-settings" href="#">setting</a></li>
+                </ul>
+            </nav>
+            <div class="st-content">
+                <!-- this is the wrapper for the content -->
+                <div class="st-content-inner">
+                    <!-- extra div for emulating position:fixed of the menu -->
+                    <!-- the content -->
+                    <div class="codrops-top clearfix ">
+                        <header>
+                            <div class="main clearfix">
+                                <div id="st-trigger-effects" class="column" style="height:50px;min-height:50px;">
+                                    <button data-effect="st-effect-1" class="buttonBox">
+                                        <span id='buttonActivateSlider' class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                        </header>
+                        <div class="container">
+                            <div class="row">
+                                <div id="dailyMenuBox">
+                                    <div class="hBox">
+                                        <h2>Daily</h2>
+                                    </div>
+                                    <div class='dailyBox' id="veryImportantBox">
+                                        <div class="headingBox">
+                                            <p>Very important</p>
+                                        </div>
+                                        <div class="bodyBox">
+                                            <div class="row" id='vimB'>
+                                                <!-- <div class="nothing col-lg-3"></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+        <input id='vimCHB' type="checkbox" aria-label="...">
+      </span>
+                                                        <p  class="form-control" aria-label="...">
+                                                    </div>
+
+                                                </div>
+                                              -->
+                                            </div>
+                                        </div>
+                                        <div class="bottomBox">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="nothing col-lg-3"></div>
+                                                    <div class="col-lg-6">
+                                                        <div class="input-group">
+                                                            <input id='veryImportantInput' type="text" class="form-control" placeholder="Add new task">
+                                                            <span class="input-group-btn">
+        <button class="btn" onclick="addNewTask('#veryImportantInput','vim')">
+        <p>+</p>
+        </button>
+      </span>
+                                                        </div>
+                                                        <!-- /input-group -->
+                                                    </div>
+                                                    <!-- /.col-lg-6 -->
+                                                </div>
+                                                <!-- /.row -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='dailyBox' id="importantBox">
+                                        <div class="headingBox">
+                                            <p>Important</p>
+                                        </div>
+                                        <div class="bodyBox">
+                                            <div class="row" id="impB">
+                                                <!-- <div class="nothing col-lg-3"></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+        <input type="checkbox" aria-label="...">
+      </span>
+                                                        <p class="form-control" aria-label="...">
+                                                    </div>
+                                                   
+                                                </div> -->
+                                                <!-- /.col-lg-6 -->
+                                            </div>
+                                        </div>
+                                        <div class="bottomBox">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="nothing col-lg-3"></div>
+                                                    <div class="col-lg-6">
+                                                        <div class="input-group">
+                                                            <input id="importantInput" type="text" class="form-control" placeholder="Add new task">
+                                                            <span class="input-group-btn">
+         <button class="btn" onclick="addNewTask('#importantInput','imp')">
+        <p>
+          
+        +
+        </p>
+        </button>
+      </span>
+                                                        </div>
+                                                        <!-- /input-group -->
+                                                    </div>
+                                                    <!-- /.col-lg-6 -->
+                                                </div>
+                                                <!-- /.row -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='dailyBox' id="notImportantBox">
+                                        <div class="headingBox">
+                                            <p> Not important</p>
+                                        </div>
+                                        <div class="bodyBox">
+                                            <div class="row" id="nimB">
+                                                <!-- <div class="nothing col-lg-3"></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+        <input type="checkbox" aria-label="...">
+      </span>
+                                                        <p class="form-control" aria-label="...">
+                                                    </div>
+                                                   
+                                                </div> -->
+                                                <!-- /.col-lg-6 -->
+                                            </div>
+                                        </div>
+                                        <div class="bottomBox">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="nothing col-lg-3"></div>
+                                                    <div class="col-lg-6">
+                                                        <div class="input-group">
+                                                            <input id="notImportantInput" type="text" class="form-control" placeholder="Add new task">
+                                                            <span class="input-group-btn">
+         <button class="btn" onclick="addNewTask('#notImportantInput','nim')">
+        <p>
+          
+        +
+        </p>
+        </button>
+      </span>
+                                                        </div>
+                                                        <!-- /input-group -->
+                                                    </div>
+                                                    <!-- /.col-lg-6 -->
+                                                </div>
+                                                <!-- /.row -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='dailyBox clearfix' id="routineBox">
+                                        <div class="headingBox">
+                                            <p>Routine</p>
+                                        </div>
+                                        <div class="bodyBox">
+                                            <div class="row" id="rutB">
+                                               <!--  <div class="nothing col-lg-3"></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+        <input type="checkbox" aria-label="...">
+      </span>
+                                                        <p class="form-control" aria-label="...">
+                                                    </div>
+                                                   
+                                                </div> -->
+                                                <!-- /.col-lg-6 -->
+                                            </div>
+                                        </div>
+                                        <div class="bottomBox">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="nothing col-lg-3"></div>
+                                                    <div class="col-lg-6">
+                                                        <div class="input-group">
+                                                            <input id='routineInput' type="text" class="form-control" placeholder="Add new task">
+                                                            <span class="input-group-btn">
+        <button class="btn" onclick="addNewTask('#routineInput','rut')">
+        <p>
+          
+        +
+        </p>
+        </button>
+      </span>
+                                                        </div>
+                                                        <!-- /input-group -->
+                                                    </div>
+                                                    <!-- /.col-lg-6 -->
+                                                </div>
+                                                <!-- /.row -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /st-content-inner -->
+                        </div>
+                        <!-- /st-content -->
+                        </div>
+                        <!-- /st-pusher -->
+                    </div>
+                    <!-- /st-container -->
+                    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                    <!-- Include all compiled plugins (below), or include individual files as needed -->
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+                    <script src="js/classie.js"></script>
+                    <script src="js/sidebarEffects.js"></script>
+                    <script src='js/main.js'>
+                    </script>
+</body>
+
+</html>
