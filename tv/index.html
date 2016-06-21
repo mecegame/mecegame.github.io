@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<title> 6 min code</title>
+	<style>
+	body{
+		background-color: #ccc;
+	}
+		#in{
+			margin-top: 50px;
+			font-size: 50px;
+			text-align: center;
+		}
+	</style>
+</head>
+	<body>
+		<div id="in">
+			
+		</div>
+<script>
+	var div = document.getElementById('in');
+	for (var i = 0; i < 100; i++) {
+	var x = Math.round( Math.random()*3);
+		console.log(x);
+	}
+	var col = Math.round( Math.random()*3);
+	if(col == 0){
+		div.style.color = 'red';
+	}
+	if(col == 1){
+		div.style.color = 'green';
+	}
+	if(col == 2){
+		div.style.color = 'blue';
+	}
+	if(col == 3){
+		div.style.color = 'yellow';
+	}
+	if(x==0){
+		div.innerHTML = 'ryka R';
+	}
+	if(x==1){
+		div.innerHTML = 'ryka L';
+	}
+	if(x==2){
+		div.innerHTML = 'noga R';
+	}
+	if(x==3){
+		div.innerHTML = 'noga L';
+	}
+</script>
+	</body>
+</html>
