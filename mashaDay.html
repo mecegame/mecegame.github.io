@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>quest</title>
+	<meta charset="utf-8">
+	<style >
+	
+	body{
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+	}
+
+	header{
+	display:  none;
+
+		background: #303F9F;
+		width: 100%;
+		height: 30px;
+		text-align: center;
+		color: white;
+		clear: both;
+	}
+	
+	.container{
+		clear: both;
+		width: 80%;
+		margin-left: 10%;
+		min-height: 200px;
+		background: white;
+		border: 1px solid #ccc;
+		margin-top: 50px;
+		box-shadow: 5px 5px 2px #ccc;
+		color: #444;
+		text-align: center;
+		font-size: 22px;
+	}
+	</style>
+</head>
+<body>
+<header>
+<strong>
+	Quest
+	
+</strong>
+</header>
+<div class="container" onclick="next();">
+	<p id="input"></p>
+</div>
+<script type="text/javascript">
+var db= [
+'привіт, натисни на мене',
+'Чим незвичайним запам’ятався день? натисни ще раз',
+'В тебе є гаряча вода? ще)',
+'статистика: ти натиснула 3 рази',
+
+]
+var now = 0;
+function next(){
+	console.log(db[now]);
+	if (now < db.length) {
+	var el = document.getElementById('input');
+	el.innerHTML = db[now];
+	now++;
+	}else{
+		now = 0;
+		var el = document.getElementById('input');
+	el.innerHTML = 'the end :) 4';
+	}
+}
+next();
+</script>
+</body>
+</html>
