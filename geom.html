@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>geom</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src='lib.js'></script>
+	<!-- <link rel="stylesheet" type="text/css" href="geom.css"> -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="css/mece.css"> -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <style type="text/css">
+    	html,body{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+p::selection{
+	background: none;
+}
+
+#playL{
+	background: white;
+	height: 100%;
+
+}
+#p1field, #p2field{
+	width: 100%;
+	height: 20%;
+	background: #D50000;
+}
+#p2field{
+	background: #0097A7;
+	position: absolute;
+	bottom: 0px;
+}
+#figgure{
+	height: 200px;
+	width: 200px;
+	background: #4CAF50;
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	top: 50%;
+	margin-top: -100px;
+	border-radius: 25%;
+	box-shadow: 5px 1px 5px 3px #aaa;
+}
+#lScore{
+	font-size: 25px;
+	color: green;
+	font-weight: bolder;
+	position: absolute;
+	top: 50%;
+	left: 10px;
+}
+#RScore{
+	font-size: 25px;
+	color: green;
+	font-weight: bolder;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+}
+#endL1,#endL2{
+	display: none;
+	width: 100%;
+	height: 20%;
+	font-size: 40px;
+	font-weight: bolder;
+	color: #555;
+	text-align: center;
+	margin-top: 40%;
+	
+}
+
+    </style>
+</head>
+
+<body>
+<div id="menuL"></div>
+<div id="playL">
+	<div id="p1field" onclick="p1plus();">
+		<div id="score1p"></div>
+	</div>
+	<div id="mainF">
+		<!-- <div id="lScore">0</div> -->
+		<div id="figgure"></div>
+		<!-- <div id="RScore">0</div> -->
+	</div>
+	<div id="p2field" onclick="p2plus();">
+		
+		<div id="score2p"></div>
+	</div>
+</div>
+<!-- <div id="endL" onclick="goToGame();"> -->
+	
+<div id="endL1" onclick="goToGame()">
+	<p> Win  Red </p>
+</div>
+<div id="endL2" onclick="goToGame();">
+	<p> Win  Navy</p>
+</div>
+<!-- </div> -->
+<script type="text/javascript">
+	var p1score = 25;
+function p1plus(argument) {
+	p1score++;
+	p1score++;
+	check();
+}
+function p2plus(argument) {
+	p1score--;
+	p1score--;
+	check();
+}
+function check(){
+	var toCHeck = parseInt($('#figgure').css('borderRadius'));
+	$('#figgure').css('borderRadius',p1score+'%');
+	if (p1score > 50) {
+		endGame(1);
+	}
+	if (p1score <0) {
+	  endGame(2);
+	}
+	console.log(toCHeck);
+}
+function endGame(a){
+	$('#playL').css('display','none');
+	$('#figgure').css('borderRadius','25%');
+	p1score = 25;
+
+	if (a=== 1) {	
+	$('#endL1').css('display','block');
+	}
+	if (a=== 2) {	
+	$('#endL2').css('display','block');
+	}
+}
+function goToGame(argument) {
+	$('#endL1').css('display','none');
+	$('#endL2').css('display','none');
+	$('#playL').css('display','block');
+}
+</script>
+<!-- <script type="text/javascript" src='geom.js'></script> -->
+</body>
+</html>
