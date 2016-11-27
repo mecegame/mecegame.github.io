@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<style type="text/css">
+		html ,body{
+	margin: 0 0 0 0;
+	overflow-x: hidden;
+	background: #eee;
+	min-width: 240px;
+}
+
+img{
+	height: 100%;
+	width: 100%;
+}
+header{
+	position: relative;
+}
+.mask{
+	background: #1D8ADF;
+	opacity: .8;
+	width: 100%;
+	min-height: 100px;
+	float: left;
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
+
+#titleH{
+	opacity: 1;
+	z-index: 5;
+	text-align: center;
+	color: white;
+	font-weight: bolder;
+	font-size: 50px;
+	margin-top:  40%;
+}
+.clearfix{
+	/*clear: both;*/
+}
+
+.newsBlock{
+	position: relative;
+	overflow: hidden;
+	min-height: 100px;
+	/*max-height: 200px;*/
+	width: 80%;
+	margin: 10px 10% 20px 10%;
+	background: white;
+	box-shadow: 3px 5px 5px 2px #555;
+}
+.newsBlock img{
+	/*float: left;*/
+	margin-top: 0px;
+	width: 100%;
+	height: auto;
+}
+.newsBlock .textBlock{
+	z-index: 5;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: inline-block;
+	width:50%;
+	height: 100%;
+	background: rgba(0,0,0, .7);
+	color: white;
+	padding: 10px 10px 10px 10px;
+}
+.newsBlock .textBlock h2{
+text-align: center;
+color: #DC6B1E;
+}
+.newsBlock .textBlock p{
+max-height: 100px;
+font-size: 14px;
+overflow: hidden;
+padding: 5px;
+/*border-bottom: 2px solid #ED7727; */
+}
+.newsBlock .textBlock button{
+	position: inherit;
+	bottom: 35px;
+	height: 30px;
+	right: 20px;
+	background: #DC6B1E;
+	border: none;
+	border-radius: 7px;
+	color: white;
+	box-shadow: inset  0 0px 3px 1px #333;
+}
+@media(min-width: 600px){
+.newsBlock {
+	max-height: 300px;
+	width: 60%;
+	margin: 10px auto 20px auto;
+}
+
+}
+@media(max-width: 600px) and (min-width: 320px){
+.newsBlock .textBlock p{
+	display: none;
+}
+}
+@media(max-width: 320px){
+.newsBlock {
+	width: 100%;
+	margin: 10px 0 20px 0;
+}
+#titleH{
+	font-size: 20px
+}
+}
+/*.clearfix2n{
+	clear: both;
+}*/
+	</style>
+</head>
+<body>
+<header>
+	<img src="tch.jpg">
+	<div class="mask">
+		<p id="titleH">Техно тренди</p>
+	</div>
+		
+</header>
+<div class="clearfix"></div>
+<div class="container">
+
+	
+<div class="newsBlock">
+		<img src="vr.jpg">
+	
+	<div class="textBlock">
+		<h2>Віртуальна реальність</h2>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<div class="clearfix"></div>
+		<button>
+			Детальніше
+		</button>
+	</div>
+</div>
+<!-- <div class="clearfixn"></div> -->
+
+	
+<div class="newsBlock">
+		<img src="ii.jpg">
+	
+	<div class="textBlock">
+		<h2>Віртуальна реальність</h2>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<div class="clearfix"></div>
+		<button>
+			Детальніше
+		</button>
+	</div>
+</div>
+<div class="clearfix"></div>
+<!-- <div class="clearfix2n"></div> -->
+
+	
+
+	
+<div class="newsBlock">
+		<img src="wear.jpg">
+	
+	<div class="textBlock">
+		<h2>Віртуальна реальність</h2>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<div class="clearfix"></div>
+		<button>
+			Детальніше
+		</button>
+	</div>
+</div>
+<div class="clearfix"></div>
+<div class="newsBlock">
+		<img src="sh.jpg">
+	
+	<div class="textBlock">
+		<h2>Віртуальна реальність</h2>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<div class="clearfix"></div>
+		<button>
+			Детальніше
+		</button>
+	</div>
+</div>
+<!-- <div class="clearfix"></div> -->
+
+<!-- <div class="clearfix"></div> -->
+</div>
+	
+
+	
+</div>
+
+</body>
+</html>
