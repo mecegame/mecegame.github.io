@@ -1,0 +1,60 @@
+body, html{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+#logo{
+	font-size: 50px;
+	text-align: center;
+	font-weight: bolder;
+
+}
+#false{
+color: #D32F2F;
+}
+#color{
+	color: #00897B;
+}
+#best{
+	text-align: center;
+	color: #333;
+	font-size: 30px;
+}
+#bestVal{
+	display: inline-block;
+}
+#goButton{
+	margin: 0 auto;
+	font-size: 50px;
+	color: white;
+	background: #009688;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	text-align: center;
+	font-weight: bolder;
+	box-shadow: 3px 5px 3px 1px #aaa;
+}
+#goButton p{
+	padding-top: 15px;
+}
+#shareButton{
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+}
+#shareButton img{
+	width: 50px;
+	height: 50px;
+
+}
+
+#musicButton{
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}
+#musicButton img{
+	width: 50px;
+	height: 50px;
+
+}
