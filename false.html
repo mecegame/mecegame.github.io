@@ -4,9 +4,9 @@
 	<title>
 		FalseTime
 	</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body>
@@ -17,8 +17,8 @@
 		<strong id="color">Color</strong>
 		</p>
 	</div>
-	<div id="best">Best:<p id="bestVal">11</p> </div>
-	<div id="goButton">
+	<div id="best">Best:<p id="bestVal">0</p> </div>
+	<div id="goButton" onclick="play();">
 	<p>
 		
 		Go
@@ -31,9 +31,37 @@
 		<img src="mus.ico">
 	</div>
 </div>
+<div id="locationGame">
+	<div id="headerBlock">
+	<div id="scoreLine">
+	score:
+		<p id="scoreVal">
+			0
+		</p>
+	</div>
+		<div id="healthBlock">
+			<img src="health.png">
+			<p id="healthVal">0</p>
+		</div>
+	</div>
+	<div id="timerBlock">
+	<form name="clockform">
+		
+		 <input id="timerVal" name="clock" size="12" maxlength="12" value="0.00s">
+		 
+	</form>
+	</div>
+	<div id="leftInput" onclick="findTIMEpre()">
+		<img src="next.png">
+	</div>
+	<div id="inputLine" onclick="trueFun()">
+		<img src="true.png" id="trueButton" >
+		<p id="needTime">You need  <strong id="secondVal"> 5</strong>s</p>
+	</div>
+</div>
 
+<script src='jq.js'></script>
 
 <script type="text/javascript" src='script.js'></script>
-<script src='jq.js'></script>
 </body>
 </html>
