@@ -62,6 +62,111 @@
 
 <script src='jq.js'></script>
 
-<script type="text/javascript" src='script.js'></script>
+<script type="text/javascript" >
+	//limit test
+function play() {
+	$('#locationMenu').css('display','none');
+	$('#locationGame').css('display','block');
+}
+function unplay(){
+	$('#locationMenu').css('display','block');
+	$('#locationGame').css('display','none');
+}
+// play();
+function trueFun(){
+clearALL()
+	randomTime = Math.round(Math.random()*9)+1;
+	$('#secondVal').html(randomTime);
+	console.log(randomTime);
+
+}
+ var startDate;
+ var init=0;
+ var clocktimer;
+function trim(string) {
+ return string.replace (/\s+/g, " ").replace(/(^\s*)|(\s*)$/g, ''); 
+}
+
+ function clearFields() {
+  init = 0;
+  clearTimeout(clocktimer);
+  document.clockform.clock.value='0.00';
+  
+ }
+
+ function clearALL() {
+  clearFields();
+  //// main check block
+  var delta = randomTime*1000 - trueTime;
+
+  if (delta<0) {
+  	delta = delta*-1;
+  }
+  console.log(delta);
+  console.log(trueTime);
+  if ( trueTime!=0) {
+
+  if (delta> 1000 ) {
+  	console.log('lose');
+  	alert('you lose :(');
+
+  	// console.log(+$('#bestVal').html());
+  	if (+$('#bestVal').html()<score ) {
+  		$('#bestVal').html(score);
+  	}
+  	
+  	  	unplay();
+  }else{
+  	score++;
+  	$('#scoreVal').html(score);
+    }
+  
+ }
+  }
+var score = 0;
+ function startTIME() { 
+  var thisDate = new Date();
+  var t = thisDate.getTime() - startDate.getTime();
+  t=t*timeMulti;
+
+  var trueT = thisDate.getTime() - startDate.getTime();
+  trueTime= trueT;
+  // console.log(t);
+
+  var ms = t%1000; t-=ms; ms=Math.floor(ms/10);
+  t = Math.floor (t/1000);
+  var s = t%60; t-=s;
+  if (s<10) s='0'+s;
+  if (ms<10) ms='0'+ms;
+  if (init==1) document.clockform.clock.value =s + '.' + ms;
+  clocktimer = setTimeout("startTIME()",10);
+ }
+var randomTime = 5;
+var timeMulti = 1;
+var trueTime =0;
+ function findTIMEpre(){
+ 	// debugger;
+ 	var x = Math.random()+1;
+ 	x = x.toFixed(2);
+ 	timeMulti = x;
+ 	console.log(x);
+ 	findTIME(timeMulti);
+ }
+ function findTIME() {
+  if (init==0) {
+   startDate = new Date();
+   startTIME();
+   init=1;
+  } 
+  else {
+   var str = trim(document.clockform.label.value);
+   console.log(document.clockform.label.value);
+   document.getElementById('marker').innerHTML = (str==''?'':str+': ') + 
+    document.clockform.clock.value + '<br>' + document.getElementById('marker').innerHTML;
+   clearFields();
+  }
+ }
+
+</script>
 </body>
 </html>
