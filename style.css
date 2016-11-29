@@ -145,6 +145,7 @@ color: #0097A7;
 }
 form , input{
 	border: none;
+	width: 100%;
 }
 form{
 	margin: 0 auto;
