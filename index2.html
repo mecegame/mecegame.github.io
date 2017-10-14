@@ -6,7 +6,7 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
-        div[id^='ball']{
+        div[id^='city']{
             height: 100px;
             width: 100px;
             
@@ -16,12 +16,12 @@
             
 
         }
-    div[id^='ball'] p{
+    div[id^='city'] p{
         color: black;
         text-align: center;
         padding-top: -20px;
     }
-    div[id^='ball'] img{
+    div[id^='city'] img{
         height: 100%;
         position: relative;
         top: -10px;
@@ -172,7 +172,6 @@ text-align: center;
     !function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
 </script>
 <script type="text/javascript" >
-    
     var graphs = [];
 //var v_weHere = 'a';
 var definedDots = [];
@@ -182,8 +181,8 @@ function Conection(from, to, distance) {
     this.to = to;
     this.distance = distance;
 }
-graphs.push(new Conection('ball2', 'ball3', 2));
-graphs.push(new Conection('ball4', 'ball3', 3));
+//graphs.push(new Conection('2', 'ball3', 2));
+//graphs.push(new Conection('ball4', 'ball3', 3));
 //graphs.push(new Conection('b', 'c', 1));
 //graphs.push(new Conection('c', 'd', 2));
 //graphs.push(new Conection('e', 'c', 3));
@@ -193,7 +192,6 @@ graphs.push(new Conection('ball4', 'ball3', 3));
     //console.log(weHere);
 
 function calcRez(weHere, toK) {
-
 
     var visited = [weHere];
     //var v_visited = [];
@@ -315,8 +313,7 @@ console.log(definedDots);
 
 }
 </script>
-<script type="text/javascript" >
-    var counter = 1;
+<script type="text/javascript" >var counter = 1;
 var configure = false;
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
@@ -344,15 +341,15 @@ function lastComplite(){
 
 function addGraph() {
     counter++;
-    $('#field').append('  <div id="ball' + counter + '"><img src="city.svg"><p >ball' + counter + ' </p></div>');
+    $('#field').append('  <div id="city' + counter + '"><img src="city.svg"><p >city' + counter + ' </p></div>');
     allGraphs.push({
-        id: 'ball' + counter,
+        id: 'city' + counter,
         connection: [],
 
     })
-    definedDots.push('ball' + counter);
+    definedDots.push('city' + counter);
 
-    $("#ball" + counter).draggable(
+    $("#city" + counter).draggable(
      {
        drag: function( event, ui ) {
          context.clearRect(0, 0, canvas.width, canvas.height);
@@ -360,9 +357,9 @@ function addGraph() {
        }
      }
       );
-    $("#ball" + counter).isdraggable = true;
+    $("#city" + counter).isdraggable = true;
 
-    $("#ball" + counter).click(function(e) {
+    $("#city" + counter).click(function(e) {
         if (configure == false) {
             configure = true;
             $('#configureGraph').css('display', 'block');
@@ -443,8 +440,7 @@ $().ready(function() {
    
     $('#myCanvas')[0].width = $(window).width();
     $('#myCanvas')[0].height = $(window).height();
-});
-</script>
+});</script>
 
 </body>
 </html>
