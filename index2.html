@@ -1,104 +1,179 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>
-		drag'n'drop
-	</title>
+    <title>
+        drag'n'drop
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
-		div[id^='ball']{
-			height: 100px;
-			width: 100px;
-			background: red;
-			border-radius: 50%;
-		}
-	div[id^='ball'] p{
-		color: black;
-		text-align: center;
-		padding-top: 20px;
-	}
-	#connection-line span{
-		margin-right: 50px;
-	}
-	canvas{
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		
-	}
-		#addNew{
-		height: 50px;
-			width: 50px;
-			background: red;
-			position: absolute;
-			left: 20px;
-			color: white;
-			border-radius: 50%;
-			font-size: 40px;
-			text-align: center;
-			bottom: 10px;	
-			font-weight: bolder;
-		}
-		#addNew:hover{
-			border: 1px solid black;
-		}
-		html,body{
-			height: 100%;
-			width: 100%;
-			margin: 0 0 0 0;
-			overflow: hidden;
-		}
-		#configureGraph{
-			background-color: #aaa;
-			color: #444;
-			display: none;
-			position: fixed;
-			top: 100px;
-		}
-		#addB{
-			display: inline-block;
-			background-color: white;
-		}
-		
+        div[id^='ball']{
+            height: 100px;
+            width: 100px;
+            
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            
+
+        }
+    div[id^='ball'] p{
+        color: black;
+        text-align: center;
+        padding-top: -20px;
+    }
+    div[id^='ball'] img{
+        height: 100%;
+        position: relative;
+        top: -10px;
+        left: -15px;
+    }
+    #mask{
+        z-index: 1111;
+        height: 100px;
+        width: 100px;
+
+    }
+    #complite{
+        background: #3F51B5;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        height: 30px;
+        width: 100px;
+        text-align: center;
+        color: white;
+    }   
+#compliteWindow{
+display: none;
+height: 250px;
+width: 100%;
+position: fixed;
+top: 50px;
+background: #eee;
+text-align: center;
+}
+#compliteGo{
+    background:  #3F51B5;
+    height: 20px;
+    color: white;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+#compliteExit{
+    background:  #3F51B5;
+    height: 20px;
+    color: white;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 10px;   
+}
+    #connection-line span{
+        margin-right: 50px;
+    }
+    canvas{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+    }
+        #addNew{
+        height: 50px;
+            width: 50px;
+            background: #F44336;
+            position: absolute;
+            left: 20px;
+            color: white;
+            border-radius: 50%;
+            font-size: 40px;
+            text-align: center;
+            bottom: 10px;   
+            font-weight: bolder;
+        }
+        #addNew:hover{
+            border: 1px solid black;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            margin: 0 0 0 0;
+            overflow: hidden;
+        }
+        #configureGraph{
+            background-color: #eee;
+            color: #222;
+            display: none;
+            position: fixed;
+            width: 100%;
+
+            top: 100px;
+        }
+        #addB, #closeB{
+            display: inline-block;
+            background-color: #3F51B5;
+            color: white;
+            height: 20px;
+            width: 80px;
+            text-align: center;
+        }
+        
+        #closeB{
+            margin-top: 10px;
+            margin-left: 5px;
+        }
 </style>
 </head>
 <body>
-	<canvas id="myCanvas"
-		>
-	</canvas>
-	<div id="field"></div>
-	<div id="addNew">
-		+
-	</div>
-	<div id="configureGraph">
-		<div class="cg-header">
-			<div class="ch-header-close"></div>
-		</div>
-		<div class="cg-content">
-			<p>Name: <strong id="nameID">e</strong></p>
-			<p>Connection:</p>
-			<div id="connection-line"> 
-			</div>
-				<form>
-					<input type="text" name="" id="from">
-					<input type="text" name="" id="to">
-					<input type="text" name="" id="distance">
-					<div id="addB">add</div>
-				</form>
-					<div id="closeB">close</div>
-		</div>
-	</div>
-	
- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <canvas id="myCanvas"
+        >
+    </canvas>
+    <div id="field"></div>
+    <div id="addNew">
+        +
+    </div>
+    <div id="complite">
+        go
+    </div>
+    <div id="compliteWindow">
+        <form>
+        <p>From</p>
+        <input id="complite_from" value="ball4"></input>    
+        <p>To</p>
+        <input id="complite_to"></input>    
+
+        </form>
+        <div id="compliteGo">Go</div>
+        <div id="compliteExit">Exit</div>
+    </div>
+    <div id="configureGraph">
+        <div class="cg-header">
+            <div class="ch-header-close"></div>
+        </div>
+        <div class="cg-content">
+            <p>Name: <strong id="nameID">e</strong></p>
+            <p>Connection:</p>
+            <div id="connection-line"> 
+            </div>
+                <form>
+                    <input type="text" name="" id="from">
+                    <input type="text" name="" id="to">
+                    <input type="text" name="" id="distance">
+                    <div id="addB">add</div>
+                </form>
+                    <div id="closeB">close</div>
+        </div>
+    </div>
+    
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 <script type="text/javascript">
-	!function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
+    !function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
 </script>
 <script type="text/javascript" >
-	var graphs = [];
-var weHere = 'a';
+    
+    var graphs = [];
 //var v_weHere = 'a';
 var definedDots = [];
 
@@ -108,51 +183,94 @@ function Conection(from, to, distance) {
     this.distance = distance;
 }
 graphs.push(new Conection('ball2', 'ball3', 2));
-graphs.push(new Conection('ball3', 'ball4', 3));
+graphs.push(new Conection('ball4', 'ball3', 3));
 //graphs.push(new Conection('b', 'c', 1));
 //graphs.push(new Conection('c', 'd', 2));
 //graphs.push(new Conection('e', 'c', 3));
 //graphs.push(new Conection('e', 'd', 4));
 
-function searchAll(arr) {
 
-    for (var i = 0; i < graphs.length; i++) {
+    //console.log(weHere);
 
-        if (graphs[i].from === weHere || graphs[i].to === weHere) {
-            loop: for (var e = 0; e < visited.length; e++) {
-                if ((graphs[i].from === visited[e] && graphs[i].to === weHere) || (graphs[i].to === visited[e] && graphs[i].from === weHere)) {
-                    break loop;
-                }
-                if (e == visited.length - 1) {
-                    arr.push(graphs[i]);
+function calcRez(weHere, toK) {
 
-                }
-            }
-        }
-    }
-}
 
-function calcRez() {
-    var visited = ['a'];
+    var visited = [weHere];
     //var v_visited = [];
-    var priceTo = [];
+    var priceTo = {};
+    if (definedDots.length === 0) {
 
+console.log(definedDots);
+    }
     for (var i = 0; i < definedDots.length; i++) {
         priceTo[definedDots[i]] = 0;
     }
-    priceTo['a'] = 0;
+
+    priceTo[weHere] = 0;
     calcPriceToAll(weHere, visited, priceTo, graphs)
 
     function calcPriceToAll(weHere, visited, priceTo, graphs) {
+        //console.log(weHere);
         // search all conetion to dot
         var trueConection = [];
-
         searchAll(trueConection);
-        if (trueConection.length === 0) {
+         if (trueConection.length === 0) {
+            console.log(priceTo)
             visited.pop();
-            console.log(visited);
+            //console.log(visited);
             return;
+          }
+       // console.log(trueConection);
+        sortElem(trueConection);
+        //console.log(trueConection);
+        recursIn();
+
+
+
+          function searchAll(arr) {
+
+
+            for (var i = 0; i < graphs.length; i++) {
+
+                if (graphs[i].from === weHere || graphs[i].to === weHere) {
+
+                    loop: for (var e = 0; e < visited.length; e++) {
+                        if ((graphs[i].from === visited[e] && graphs[i].to === weHere) || (graphs[i].to === visited[e] && graphs[i].from === weHere)) {
+                            break loop;
+                        }
+                        if (e == visited.length - 1) {
+                            arr.push(graphs[i]);
+
+                        }
+                    }
+                }
+            }
         }
+        function recursIn(){
+        for (var k = 0; k < trueConection.length; k++) {
+            if (trueConection[k].to === weHere) {
+                var temp = swap(trueConection[k].from, trueConection[k].to);
+                trueConection[k].from = temp[0];
+                trueConection[k].to = temp[1];
+            }
+            //console.log(priceTo);
+            if (priceTo[weHere] + trueConection[k].distance < priceTo[trueConection[k].to] || priceTo[weHere] == 0 || priceTo[trueConection[k].to] === 0) {
+
+                priceTo[trueConection[k].to] = priceTo[weHere] + trueConection[k].distance;
+                visited.push(trueConection[k].to);
+                v_visited = cloneArr(visited);
+
+                var copy = Object.assign({}, priceTo);
+
+                calcPriceToAll(trueConection[k].to, v_visited, priceTo, graphs);
+
+            }
+        }
+
+        }
+ 
+
+        
         // set trueConection priority
         function sortElem(arr) {
             var buffer;
@@ -176,28 +294,6 @@ function calcRez() {
             }
             return arr;
         }
-        sortElem(trueConection);
-        for (var k = 0; k < trueConection.length; k++) {
-            if (trueConection[k].to === weHere) {
-                var temp = swap(trueConection[k].from, trueConection[k].to);
-                trueConection[k].from = temp[0];
-                trueConection[k].to = temp[1];
-            }
-            if (priceTo[weHere] + trueConection[k].distance < priceTo[trueConection[k].to] || priceTo[weHere] == 0 || priceTo[trueConection[k].to] === 0) {
-
-                priceTo[trueConection[k].to] = priceTo[weHere] + trueConection[k].distance;
-                visited.push(trueConection[k].to);
-                v_visited = cloneArr(visited);
-                console.log(weHere);
-                console.log(v_visited);
-
-                var copy = Object.assign({}, priceTo);
-                console.log(copy);
-                calcPriceToAll(trueConection[k].to, v_visited, priceTo, graphs);
-
-            }
-        }
-
         function swap(from, to) {
             var buffer = from;
             from = to;
@@ -213,26 +309,59 @@ function calcRez() {
             return newarr;
         }
     }
+    
+    alert('distance To  ' + toK +" : "+priceTo[toK]);
+
+
 }
 </script>
 <script type="text/javascript" >
-	var counter = 1;
+    var counter = 1;
 var configure = false;
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
 $('#addNew').click(addGraph);
-var allGraphs = []
+var allGraphs = [];
+$('#complite').click(pre_calcRez);
+
+function pre_calcRez(){
+ 
+  $('#compliteWindow').css('display','block');
+}
+$('#compliteExit').click(closeComplite);
+function closeComplite(){
+
+  $('#compliteWindow').css('display','none');
+}
+$('#compliteGo').click(lastComplite);
+function lastComplite(){
+  // validator is here
+  var from = $('#complite_from')[0].value;
+  var to = $('#complite_to')[0].value;
+  
+  calcRez(from,to);
+}
 
 function addGraph() {
     counter++;
-    $('#field').append('  <div id="ball' + counter + '"><p >ball' + counter + ' </p></div>');
+    $('#field').append('  <div id="ball' + counter + '"><img src="city.svg"><p >ball' + counter + ' </p></div>');
     allGraphs.push({
         id: 'ball' + counter,
         connection: [],
 
     })
     definedDots.push('ball' + counter);
-    $("#ball" + counter).draggable();
+
+    $("#ball" + counter).draggable(
+     {
+       drag: function( event, ui ) {
+         context.clearRect(0, 0, canvas.width, canvas.height);
+        renderCanvas();
+       }
+     }
+      );
+    $("#ball" + counter).isdraggable = true;
+
     $("#ball" + counter).click(function(e) {
         if (configure == false) {
             configure = true;
@@ -261,10 +390,11 @@ $('#addB').click(addConfigure);
 
 function addConfigure() {
     var from = $('#from')[0].value;
-
-    console.log(from);
     var to = $('#to')[0].value;
-    var distance = $('#distance')[0].value;
+    
+   //$('#'+from).draggable('disable');
+   // $('#'+to).draggable('disable');
+    var distance = +$('#distance')[0].value;
     if (from !== undefined && to !== undefined && distance > 0 && from !== to) {
         // check valid 
         var temp_valid_f = false;
@@ -300,9 +430,8 @@ function closeConfigure() {
 
 function renderCanvas() {
     for (var i = 0; i < graphs.length; i++) {
-        console.log($('#' + graphs[i].from)[0].offsetLeft, $('#' + graphs[i].from)[0].offsetTop)
-        console.log($('#' + graphs[i].to)[0].offsetLeft, $('#' + graphs[i].to)[0].offsetTop);
-        console.log('/n');
+        
+        
         context.beginPath();
         context.moveTo($('#' + graphs[i].from)[0].offsetLeft + 50, $('#' + graphs[i].from)[0].offsetTop + 50);
         context.lineTo($('#' + graphs[i].to)[0].offsetLeft + 50, $('#' + graphs[i].to)[0].offsetTop + 50);
@@ -311,7 +440,7 @@ function renderCanvas() {
 }
 $().ready(function() {
     renderCanvas();
-    console.log($('#myCanvas'));
+   
     $('#myCanvas')[0].width = $(window).width();
     $('#myCanvas')[0].height = $(window).height();
 });
