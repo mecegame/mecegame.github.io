@@ -101,7 +101,6 @@ text-align: center;
             margin: 0 0 0 0;
             overflow: hidden;
         }
-    
         #configureGraph{
             background-color: #eee;
             color: #222;
@@ -367,6 +366,7 @@ function addGraph() {
             //render
             var elem = e.currentTarget.id;
              $('#from')[0].value = elem;
+             $('#to')[0].value = 'city';
             $('#nameID')[0].innerHTML = elem;
             for (var i = 0; i < graphs.length; i++) {
                 if (graphs[i].from == elem || graphs[i].to == elem) {
