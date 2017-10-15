@@ -1,0 +1,499 @@
+<html>
+    <head>
+        <title>market</title>
+        <meta charset='utf-8'>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<style>
+
+.logo-img {
+    margin: 10px 20px;
+}
+header{
+    
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+header *{
+    display: inline-block;
+}
+select{
+    background: #eee;
+    text-align: center;
+}
+option{
+    text-align: center;
+}
+select{
+    border: none;
+    
+}
+.cloth-b-header select{
+    width: 150px;
+    font-weight: 600;    
+}
+header ul{
+    color: white;
+    float: right;
+    padding: 10px 40px; 
+}
+header ul li {
+    padding:0 10px;
+    font-size: 20px;
+    font-weight: 500
+}
+
+
+.header-text-block {
+    position: absolute;
+   top: 200px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    font-size: 25px;
+}
+.header-text-block h2{
+    font-size: 40px;
+}
+.header-text-block p{
+    font-size: 20px;
+}
+
+.header-img {
+    width: 100%;
+    height: auto;
+}
+
+#header-skip-button {
+    position: relative;
+    bottom: 100px;
+    margin: 0 auto;
+    width: 0px;
+    color: white;
+    font-size: 70px;
+    font-weight: 600;
+    transform: rotate(90deg);
+    line-height: 1px;
+}
+
+.product-configure {
+    background: #eee;
+    height: 100px;
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+   padding-top: 25px     
+}
+*{
+    clear: both;
+}
+
+.product-configure-param {
+    display: inline-block;
+    margin-right: 30px;
+}
+.product-configure-param input[type ='checkbox']{
+    height: 40px;
+    width: 30px;
+    border: 3px solid #aa9b77;
+    color: blue;
+    background-color: red;
+}
+input{
+    background: red;
+}
+.product-configure-param p{
+font-size: 20px;
+    position: relative;
+    top: -15px;
+    font-weight: 500;
+    margin: 0px 50px 0px 5px:
+}
+
+button {
+ background: #aa9b77;
+    color: white;
+    height: 50px;
+    padding: 0 20px;
+    font-weight: 400;
+    border-radius: 7px;
+}
+.product-configure-param *{
+    display: inline-block;
+}
+.product-configure form button{
+float: right;
+}
+
+.product-category {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.product-counter {
+    float: right;
+    font-weight: 700;
+}
+
+.clothes-block {
+    
+    background: #fff;
+    
+    padding: 5px;
+}
+.clothes-block:hover{
+    border: 5px solid #aa9b77;
+    border-radius: 3px;
+}
+
+.cloth-b-header {
+    width: 100%;
+}
+
+.blue ,.yellow, .grey {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: blue;
+   
+
+    display: inline-block;
+    
+    
+}
+.yellow{
+    background: yellow;
+}
+.grey{background: grey;}
+
+.product-color-box {
+    float: right;
+    height: 20px;
+}
+
+.cloth-b-body {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cloth-b-footer {
+    font-weight: 700;
+    
+}
+.cloth-b-footer p{
+    display: inline-block;
+}
+.product-price{
+    float: right;
+    
+}
+.product-name{
+    color: #aa9b77;
+}
+
+.cloths-b-mask {
+    margin-left: 10px;
+    background: #eee;
+    margin-right: 10px;
+    
+}
+
+</style>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    </head>
+    <body>
+        <div class="container-flue">
+            <img src="img/header-back.png" alt="" class="header-img">
+            <header>
+                <img src="img/header-logo.png" alt="" class="logo-img">
+                <ul>
+                    <li>Home</li>
+                    <li>Products</li>
+                    <li>
+                        <img src="img/header-trolley.png" alt="">
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="header-text-block">
+                <h2>Our clothing , your comfort</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt <br> labore et dolore
+ magna aliqua.</p>
+            </div>
+            <div id="header-skip-button">></div>
+        </div>
+        <div class="container-fluid product-configure">
+            <form action="">
+                <div class="product-configure-param">
+                    <input type="checkbox">
+                    <p>Men</p>
+                </div>
+                <div class="product-configure-param">
+                    <input type="checkbox">
+                    <p>Woman</p>
+                </div>
+                   <div class="product-configure-param">
+                    <input type="checkbox">
+                    <p>Children</p>
+                </div>
+                <button>SEE ALL PRODUCTS</button>
+            </form>
+        </div>
+         <div class="container">
+            <div class="product-category">
+                <p>Men</p>
+            </div>
+            <div class="product-counter">
+                <p>1\5</p>
+            </div>
+            <div class="row">
+                
+            <div class="col-sm-6 col-xs-12 col-md-4 col-lg-4 clothes-block">
+               <div class="cloths-b-mask">
+                   
+                <div class="cloth-b-header ">
+                       
+                        
+                    <select name="size" id="">
+                       <option value="x">Size</option>
+                        <option value="xs">xs</option>
+                         <option value="">s</option>
+                         <option value="">m</option>
+                         <option value="">l</option>
+                         <option value="">xl</option>
+                        
+                    </select>
+                    <div class="product-color-box">
+                        
+                    <div class="blue "></div>
+                    <div class="yellow "></div>
+                    <div class="grey"></div>
+                    </div>
+
+                </div>
+                <div class="cloth-b-body img-responsive">
+                    <img src="img/product-tshirts.png" alt="">
+                </div>
+                <div class="cloth-b-footer">
+                    <p class="product-name">
+                        T-shirts
+                    </p>
+                    <p class="product-price">
+                        5,00 $
+                    </p>
+                </div>
+              
+               </div>
+            </div>
+            <div class="col-sm-6 col-xs-12 col-md-4 col-lg-4 clothes-block">
+               <div class="cloths-b-mask">
+                   
+                <div class="cloth-b-header ">
+                       
+                        
+                    <select name="size" id="">
+                       <option value="x">Size</option>
+                        <option value="xs">xs</option>
+                         <option value="">s</option>
+                         <option value="">m</option>
+                         <option value="">l</option>
+                         <option value="">xl</option>
+                        
+                    </select>
+                    <div class="product-color-box">
+                        
+                    <div class="blue "></div>
+                    <div class="yellow "></div>
+                    <div class="grey"></div>
+                    </div>
+
+                </div>
+                <div class="cloth-b-body img-responsive">
+                    <img src="img/product-pants.png" alt="">
+                </div>
+                <div class="cloth-b-footer">
+                    <p class="product-name">
+                        T-shirts
+                    </p>
+                    <p class="product-price">
+                        5,00 $
+                    </p>
+                </div>
+              
+               </div>
+            </div>
+            
+            <div class="col-sm-6 col-xs-12 col-md-4 col-lg-4 clothes-block">
+               <div class="cloths-b-mask">
+                   
+                <div class="cloth-b-header ">
+                       
+                        
+                    <select name="size" id="">
+                       <option value="x">Size</option>
+                        <option value="xs">xs</option>
+                         <option value="">s</option>
+                         <option value="">m</option>
+                         <option value="">l</option>
+                         <option value="">xl</option>
+                        
+                    </select>
+                    <div class="product-color-box">
+                        
+                    <div class="blue "></div>
+                    <div class="yellow "></div>
+                    <div class="grey"></div>
+                    </div>
+
+                </div>
+                <div class="cloth-b-body img-responsive">
+                    <img src="img/product-backpack.png" alt="">
+                </div>
+                <div class="cloth-b-footer">
+                    <p class="product-name">
+                        T-shirts
+                    </p>
+                    <p class="product-price">
+                        5,00 $
+                    </p>
+                </div>
+              
+               </div>
+            </div>
+            
+            </div>
+        </div>
+        <div class="container">
+            <div class="product-category">
+                <p>Woman</p>
+            </div>
+            <div class="product-counter">
+                <p>1\5</p>
+            </div>
+            <div class="row">
+                
+            <div class="col-sm-6 col-xs-12 col-md-4 col-lg-4 clothes-block">
+               <div class="cloths-b-mask">
+                   
+                <div class="cloth-b-header ">
+                       
+                        
+                    <select name="size" id="">
+                       <option value="x">Size</option>
+                        <option value="xs">xs</option>
+                         <option value="">s</option>
+                         <option value="">m</option>
+                         <option value="">l</option>
+                         <option value="">xl</option>
+                        
+                    </select>
+                    <div class="product-color-box">
+                        
+                    <div class="blue "></div>
+                    <div class="yellow "></div>
+                    <div class="grey"></div>
+                    </div>
+
+                </div>
+                <div class="cloth-b-body img-responsive">
+                    <img src="img/product-jacket.png" alt="">
+                </div>
+                <div class="cloth-b-footer">
+                    <p class="product-name">
+                        T-shirts
+                    </p>
+                    <p class="product-price">
+                        5,00 $
+                    </p>
+                </div>
+              
+               </div>
+            </div>
+            <div class="col-sm-6 col-xs-12 col-md-4 col-lg-4 clothes-block">
+               <div class="cloths-b-mask">
+                   
+                <div class="cloth-b-header ">
+                       
+                        
+                    <select name="size" id="">
+                       <option value="x">Size</option>
+                        <option value="xs">xs</option>
+                         <option value="">s</option>
+                         <option value="">m</option>
+                         <option value="">l</option>
+                         <option value="">xl</option>
+                        
+                    </select>
+                    <div class="product-color-box">
+                        
+                    <div class="blue "></div>
+                    <div class="yellow "></div>
+                    <div class="grey"></div>
+                    </div>
+
+                </div>
+                <div class="cloth-b-body img-responsive">
+                    <img src="img/boat.png" alt="">
+                </div>
+                <div class="cloth-b-footer">
+                    <p class="product-name">
+                        T-shirts
+                    </p>
+                    <p class="product-price">
+                        5,00 $
+                    </p>
+                </div>
+              
+               </div>
+            </div>
+            
+            <div class="col-sm-6 col-xs-12 col-md-4 col-lg-4 clothes-block">
+               <div class="cloths-b-mask">
+                   
+                <div class="cloth-b-header ">
+                       
+                        
+                    <select name="size" id="">
+                       <option value="x">Size</option>
+                        <option value="xs">xs</option>
+                         <option value="">s</option>
+                         <option value="">m</option>
+                         <option value="">l</option>
+                         <option value="">xl</option>
+                        
+                    </select>
+                    <div class="product-color-box">
+                        
+                    <div class="blue "></div>
+                    <div class="yellow "></div>
+                    <div class="grey"></div>
+                    </div>
+
+                </div>
+                <div class="cloth-b-body img-responsive">
+                    <img src="img/product-w-tshirt.png" alt="">
+                </div>
+                <div class="cloth-b-footer">
+                    <p class="product-name">
+                        T-shirts
+                    </p>
+                    <p class="product-price">
+                        5,00 $
+                    </p>
+                </div>
+              
+               </div>
+            </div>
+            
+            </div>
+        </div>
+        <div class="container-flue"></div>
+        <div class="container-flue"></div>
+        <div class="container-flue"></div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    </body>
+</html> 
